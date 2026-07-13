@@ -6,16 +6,23 @@ import './App.css'
 import ViewCars from './components/ViewCars'
 import NavigationBar from './components/NavigationBar'
 import Home from './components/Home'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <Home/>
+      <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='add' element={<AddCar/>}/>
+        <Route path='view' element={<ViewCars/>}/>
+
+      </Routes>
       
-      <ViewCars/>
-      <NavigationBar/>
+      </BrowserRouter>
+      
     </>
   )
 }
