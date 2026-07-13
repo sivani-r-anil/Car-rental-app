@@ -23,8 +23,7 @@ function App() {
       </Routes>
       
       </BrowserRouter>
-      <AddCar />
-      <Home/>
+     
       
     </>
   )
