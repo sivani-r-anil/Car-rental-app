@@ -10,47 +10,45 @@ const AddCar = () => {
         {
 
             registration_number: "",
-             brand: "",
-              model: "",
-              vehicle_type: "",
-               fuel_type:"",
-               transmission:"",
-               seating_capacity:"",
-               rent_per_day:"",
-               city:"",
-               availability_status:"",
-               status:""
+            brand: "",
+            model: "",
+            vehicle_type: "",
+            fuel_type: "",
+            transmission: "",
+            seating_capacity: "",
+            rent_per_day: "",
+            city: "",
+            availability_status: "",
+            status: ""
 
         }
 
 
 
     )
-    const inputHandeler=(event)=>
-    {
+    const inputHandeler = (event) => {
 
-        changeInput({...input,[event.target.name]: event.target.value})
+        changeInput({ ...input, [event.target.name]: event.target.value })
 
     }
 
-    const readValue =()=>
-    {
+    const readValue = () => {
 
         
         console.log(input)
-        axios.post("https://host-demo-app.onrender.com/api/add-car",input).then(
+        axios.post("https://host-demo-app.onrender.com/api/add-car", input).then(
 
-            (response) =>{
+            (response) => {
 
                 console.log(response.data)
                 alert("Car added suceessfully")
             }
         ).catch((error) => {
-    console.log(error.response);
-    console.log(error.response?.data);
-    console.log(error.response?.status);
-    alert("Failed to add Car");
-});
+            console.log(error.response);
+            console.log(error.response?.data);
+            console.log(error.response?.status);
+            alert("Failed to add Car");
+        });
 
 
     }
@@ -58,6 +56,11 @@ const AddCar = () => {
     <div>
         <NavigationBar />
         <div className="container">
+            <div className="row">
+                <div className="col-12">
+                    <div className="row g-3"></div>
+
+            <div className="container">
                 <div className="row">
                     <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12" />
                     <div className="row g-3">
@@ -77,7 +80,7 @@ const AddCar = () => {
 
                             <label htmlFor="" className="form-label">model</label><br></br>
                             <input type="text" className="form-control" name="model" value={input.model} onChange={inputHandeler} />
-                            
+
                         </div>
                         <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
 
@@ -105,16 +108,16 @@ const AddCar = () => {
 
                             <label htmlFor="" className="form-label">Transmission</label>
                             <select name="" id="" className="form-control" name="transmission" value={input.transmission} onChange={inputHandeler} >
-                                
+
                                 <option value="Manual">Manual</option>
                                 <option value="Automatic">Automatic</option>
                             </select>
                         </div>
-                        
+
                         <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
 
                             <label htmlFor="" className="form-label">Seating Capacity</label>
-                            <input type="number" className="form-control " name="seating_capacity" value={input.seating_capacity} onChange={inputHandeler}/>
+                            <input type="number" className="form-control " name="seating_capacity" value={input.seating_capacity} onChange={inputHandeler} />
                         </div>
 
 
@@ -135,8 +138,8 @@ const AddCar = () => {
                         <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
 
                             <label htmlFor="" className="form-label">Availability Status</label>
-                        <select name="" id="" className="form-control" name="availability_status" value={input.availability_status} onChange={inputHandeler} >
-                                
+                            <select name="" id="" className="form-control" name="availability_status" value={input.availability_status} onChange={inputHandeler} >
+
                                 <option value="Available">Available</option>
                                 <option value="Booked">Booked</option>
                                 <option value="Maintenance">Maintenance</option>
@@ -144,10 +147,10 @@ const AddCar = () => {
                         </div>
 
 
-                        
 
 
-                       
+
+
 
 
                         <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
@@ -162,8 +165,8 @@ const AddCar = () => {
                 </div>
             </div>
 
-    </div>
-  )
-}
+        </div>
+    )
+
 
 export default AddCar
