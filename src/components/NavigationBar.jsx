@@ -12,7 +12,7 @@ const NavigationBar = () => {
             >
                 <div className="container">
                     <a className="navbar-brand fw-bold" href="/">
-                        🚗 Car Rental App
+                        🚗 CAR RENTAL APP
                     </a>
 
                     <button
